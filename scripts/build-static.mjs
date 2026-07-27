@@ -30,29 +30,35 @@ async function run(cmd, args, opts = {}) {
 
 async function main() {
   await rm(join(ROOT, "dist"), { recursive: true, force: true });
-  console.log("→ vite build");
-  await run("npx", ["vite", "build"], { cwd: ROOT });
+  console.log("→ vite build (node-server preset)");
+  await run("npx", ["vite", "build"], {
+    cwd: ROOT,
+    env: { ...process.env, NITRO_PRESET: "node-server" },
+  });
 
   const port = 4173 + Math.floor(Math.random() * 500);
-  console.log(`→ starting preview on :${port}`);
-  const preview = spawn("npx", ["vite", "preview", "--port", String(port), "--host", "127.0.0.1"], {
+  console.log(`→ starting node server on :${port}`);
+  const server = spawn("node", [join(ROOT, "dist/server/index.mjs")], {
     cwd: ROOT,
     stdio: ["ignore", "pipe", "inherit"],
+    env: { ...process.env, PORT: String(port), HOST: "127.0.0.1" },
   });
 
   // wait for ready
   await new Promise((resolve, reject) => {
-    const t = setTimeout(() => reject(new Error("preview didn't start in 30s")), 30000);
-    preview.stdout.on("data", (buf) => {
-      const s = buf.toString();
-      process.stdout.write(s);
-      if (s.includes("Local:") || s.includes("localhost")) {
-        clearTimeout(t);
-        resolve();
-      }
-    });
-    preview.on("exit", (c) => reject(new Error(`preview exited ${c}`)));
+    const t = setTimeout(() => reject(new Error("server didn't start in 30s")), 30000);
+    const check = async () => {
+      try {
+        const r = await fetch(`http://127.0.0.1:${port}/`);
+        if (r.ok || r.status === 200) { clearTimeout(t); resolve(); return; }
+      } catch {}
+      setTimeout(check, 200);
+    };
+    server.stdout.on("data", (b) => process.stdout.write(b));
+    server.on("exit", (c) => reject(new Error(`server exited ${c}`)));
+    setTimeout(check, 300);
   });
+
 
   // small settle time
   await new Promise((r) => setTimeout(r, 500));
