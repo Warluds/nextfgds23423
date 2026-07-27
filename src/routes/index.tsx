@@ -56,6 +56,11 @@ const services = [
     title: "Разработка сайтов",
     desc: "Корпоративные сайты, порталы и B2B-платформы на современном стеке с фокусом на скорости.",
   },
+  {
+    n: "06",
+    title: "Разработка мобильных приложений",
+    desc: "Нативные и кроссплатформенные решения для iOS и Android с интеграцией в вашу ИТ-экосистему.",
+  },
 ];
 
 const steps = [
@@ -161,28 +166,6 @@ function Index() {
                   </div>
                 </div>
               ))}
-              <div className="bg-white p-8 md:p-10 flex flex-col md:col-span-3 gap-6">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                  <div className="flex items-start gap-6">
-                    <div className="size-10 bg-brand/10 rounded-md ring-1 ring-brand/20 flex items-center justify-center shrink-0">
-                      <span className="text-brand font-medium text-xs tabular-nums">06</span>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-lg font-medium tracking-tight">Разработка мобильных приложений</h3>
-                      <p className="text-sm text-neutral-500 leading-relaxed text-pretty max-w-[60ch]">
-                        Нативные и кроссплатформенные решения для iOS и Android с интеграцией в вашу ИТ-экосистему.
-                        От прототипа до публикации в сторах и поддержки после релиза.
-                      </p>
-                    </div>
-                  </div>
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center justify-center px-5 py-2.5 bg-neutral-900 text-white text-sm font-medium rounded-md hover:bg-neutral-800 transition-colors shrink-0"
-                  >
-                    Обсудить разработку
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
