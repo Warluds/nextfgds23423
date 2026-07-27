@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import caseAbisImg from "@/assets/case-abis.jpg";
-import caseEgloImg from "@/assets/case-eglo.jpg";
-import caseImpulseImg from "@/assets/case-impulse.jpg";
-import caseAbisGroupImg from "@/assets/case-abisgroup.jpg";
-import caseDeltaImg from "@/assets/case-delta.jpg";
-import caseMiracodeImg from "@/assets/case-miracode.jpg";
+import caseAbisImg from "@/assets/portfolio/abis.png";
+import caseEgloImg from "@/assets/portfolio/eglo.png";
+import caseImpulseImg from "@/assets/portfolio/impulse-media.png";
+import caseAbisGroupImg from "@/assets/portfolio/abis-group.png";
+import caseDeltaImg from "@/assets/portfolio/delta.png";
+import caseMiracodeImg from "@/assets/portfolio/miracode.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
