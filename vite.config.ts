@@ -7,18 +7,6 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  nitro: {
-    preset: process.env.NITRO_PRESET,
-    // Prerender routes so the built `dist/client/` folder contains ready-to-upload
-    // static HTML for shared hosting. Nitro accepts this at runtime even though
-    // the wrapper's TypeScript surface only advertises `preset`/`output`/`cloudflare`.
-    ...({
-      prerender: {
-        crawlLinks: true,
-        routes: ["/", "/sitemap.xml", "/robots.txt"],
-      },
-    } as Record<string, unknown>),
-  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     server: { entry: "server" },
