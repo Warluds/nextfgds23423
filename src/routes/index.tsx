@@ -243,7 +243,7 @@ function Index() {
               {
                 img: caseInfraImg,
                 title: "Модернизация сети ритейл-компании",
-                tag: "ИТ-аутсорсинг · Безопасность",
+                tag: "ИТ-аутсорсинг · Инфраструктура",
               },
               {
                 img: caseFintechImg,
