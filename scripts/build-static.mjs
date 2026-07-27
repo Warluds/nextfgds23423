@@ -75,7 +75,7 @@ async function main() {
       await writeFile(join(outDir, "index.html"), html, "utf8");
     }
   } finally {
-    preview.kill("SIGTERM");
+    server.kill("SIGTERM");
   }
 
   console.log("\n✔ Static site ready in dist/client/");
