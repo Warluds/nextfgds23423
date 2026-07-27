@@ -201,16 +201,6 @@ function Index() {
                 Наш подход основан на методологии ITSM и строгом соблюдении SLA.
                 Мы не решаем проблемы по мере их появления — мы их предотвращаем.
               </p>
-              <div className="rounded-xl border border-neutral-950/5 overflow-hidden bg-neutral-50">
-                <img
-                  src={blueprintImg}
-                  width={1200}
-                  height={900}
-                  loading="lazy"
-                  alt="Схема ИТ-инфраструктуры Nexit"
-                  className="w-full h-auto"
-                />
-              </div>
             </div>
             <div className="flex flex-col divide-y divide-neutral-950/5">
               {steps.map((s) => (
