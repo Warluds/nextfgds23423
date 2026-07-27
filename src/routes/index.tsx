@@ -273,34 +273,46 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-12 border-b border-border pb-8 gap-6">
             <div className="flex flex-col gap-4">
-              <span className="text-xs text-muted-foreground font-display font-medium uppercase tracking-widest">03 — Selected work</span>
+              <span className="text-xs text-muted-foreground font-display font-medium uppercase tracking-widest">03 — Portfolio</span>
               <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight text-balance max-w-[16ch]">
-                Реализованные кейсы
+                Реализованные проекты
               </h2>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 img: caseInfraImg,
-                title: "Модернизация сети ритейл-компании",
-                tag: "ИТ-аутсорсинг · Инфраструктура",
+                title: "abis",
+                tag: "ИТ-аутсорсинг · 1С · Серверы · Приложения · Сайт",
               },
               {
                 img: caseFintechImg,
-                title: "Мобильная система мониторинга платежей",
-                tag: "Разработка приложений · Fintech",
+                title: "eglo.kz",
+                tag: "ИТ-аутсорсинг · 1С · Серверы · Приложения · Сайт",
               },
+              { title: "impulse-media.kz", tag: "Веб-разработка · Корпоративный сайт" },
+              { title: "abis.group", tag: "Веб-разработка · Корпоративный сайт" },
+              { title: "deltaminingcons.kz", tag: "Веб-разработка · Корпоративный сайт" },
+              { title: "miracode.kz", tag: "Веб-разработка · Корпоративный сайт" },
             ].map((p) => (
               <article key={p.title} className="group flex flex-col gap-5">
-                <div className="w-full aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-border bg-card">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                  />
-                </div>
+                {p.img ? (
+                  <div className="w-full aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-border bg-card">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-full aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-border bg-gradient-to-br from-secondary to-card flex items-center justify-center p-6 group-hover:from-secondary/80 group-hover:to-card transition-colors">
+                    <span className="text-xl md:text-2xl font-display font-semibold text-foreground/80 text-center break-all">
+                      {p.title}
+                    </span>
+                  </div>
+                )}
                 <div className="flex flex-col gap-1.5">
                   <h4 className="text-lg font-display font-medium tracking-tight">{p.title}</h4>
                   <p className="text-xs text-muted-foreground uppercase tracking-widest">{p.tag}</p>
@@ -308,9 +320,6 @@ function Index() {
               </article>
             ))}
           </div>
-          <p className="text-center mt-14 text-sm text-muted-foreground">
-            Полный список проектов появится здесь — <span className="text-foreground font-medium">в работе</span>.
-          </p>
         </div>
       </section>
 
