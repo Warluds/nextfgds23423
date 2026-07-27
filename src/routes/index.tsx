@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "ИТ-аутсорсинг, техподдержка 24/7, облака и разработка. Nexit.kz — технологический партнёр вашего бизнеса.",
+          "Nexit.kz — ИТ-аутсорсинг, техподдержка 24/7, облака и разработка сайтов и приложений в Казахстане.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:title", content: "Nexit — Инженерная точность ваших ИТ-систем" },
       {
         name: "twitter:description",
-        content: "ИТ-аутсорсинг и разработка. Nexit.kz",
+        content: "Nexit.kz — ИТ-аутсорсинг, техподдержка 24/7, облака и разработка сайтов и приложений в Казахстане.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
