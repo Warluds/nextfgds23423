@@ -7,31 +7,88 @@ import caseAbisGroupImg from "@/assets/portfolio/abis-group.png";
 import caseDeltaImg from "@/assets/portfolio/delta.png";
 import caseMiracodeImg from "@/assets/portfolio/miracode.png";
 
+const SITE_URL = "https://nexit.kz";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nexit — Инженерная точность ваших ИТ-систем" },
+      { title: "Nexit — ИТ-аутсорсинг, поддержка 24/7 и разработка в Казахстане" },
       {
         name: "description",
         content:
-          "Nexit.kz — ИТ-аутсорсинг, техподдержка 24/7, облака и разработка сайтов и приложений в Казахстане.",
+          "Nexit.kz — ИТ-аутсорсинг, техподдержка 24/7, администрирование серверов, облачные решения и разработка сайтов и приложений в Казахстане.",
       },
-      { property: "og:title", content: "Nexit — Инженерная точность ваших ИТ-систем" },
+      { name: "keywords", content: "ИТ-аутсорсинг, IT аутсорсинг Казахстан, техподдержка 24/7, администрирование серверов, облачные решения, разработка сайтов, разработка приложений, Nexit, Алматы, Астана" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "googlebot", content: "index, follow" },
+      { property: "og:title", content: "Nexit — ИТ-аутсорсинг, поддержка 24/7 и разработка в Казахстане" },
       {
         property: "og:description",
         content:
-          "Nexit.kz — ИТ-аутсорсинг, техподдержка 24/7, облака и разработка сайтов и приложений в Казахстане.",
+          "ИТ-аутсорсинг, техподдержка 24/7, серверы, облака и разработка сайтов и приложений. Инженерная точность для вашего бизнеса.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "ru_RU" },
+      { property: "og:site_name", content: "Nexit" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Nexit — Инженерная точность ваших ИТ-систем" },
+      { name: "twitter:title", content: "Nexit — ИТ-аутсорсинг и разработка в Казахстане" },
       {
         name: "twitter:description",
-        content: "Nexit.kz — ИТ-аутсорсинг, техподдержка 24/7, облака и разработка сайтов и приложений в Казахстане.",
+        content: "ИТ-аутсорсинг, техподдержка 24/7, серверы, облака и разработка сайтов и приложений.",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/` },
+      { rel: "alternate", hrefLang: "ru", href: `${SITE_URL}/` },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              name: "Nexit",
+              url: SITE_URL,
+              slogan: "Инженерная точность ваших ИТ-систем",
+              areaServed: "KZ",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+7-700-176-7007",
+                contactType: "customer support",
+                availableLanguage: ["Russian", "Kazakh", "English"],
+              },
+              sameAs: ["https://wa.me/77001767007"],
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              url: SITE_URL,
+              name: "Nexit",
+              inLanguage: "ru-RU",
+              publisher: { "@id": `${SITE_URL}/#organization` },
+            },
+            {
+              "@type": "ProfessionalService",
+              name: "Nexit — ИТ-аутсорсинг",
+              url: SITE_URL,
+              areaServed: "KZ",
+              serviceType: [
+                "ИТ-аутсорсинг",
+                "Техподдержка 24/7",
+                "Администрирование серверов и сетей",
+                "Облачные решения",
+                "Разработка сайтов",
+                "Разработка приложений",
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Index,
 });
