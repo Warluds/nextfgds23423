@@ -25,7 +25,7 @@ npm run dev
 
 ```bash
 npm install --legacy-peer-deps
-npm run build:static
+npm run build
 ```
 
 После этого готовый сайт лежит в папке:
@@ -42,7 +42,7 @@ dist/
 npx serve dist
 ```
 
-> `npm run build` (без `:static`) — сборка под Cloudflare Workers, используется внутри Lovable. Для обычного хостинга запускайте `npm run build:static`.
+> `npm run build` теперь сразу собирает обычную папку `dist/`. Если когда-нибудь понадобится серверная сборка TanStack/Nitro, используйте `npm run build:server`.
 
 
 ---
@@ -54,14 +54,14 @@ npx serve dist
 ### Node.js хостинг
 
 ```bash
-NITRO_PRESET=node-server npm run build
+NITRO_PRESET=node-server npm run build:server
 node .output/server/index.mjs
 ```
 
 ### Netlify
 
 ```bash
-NITRO_PRESET=netlify npm run build
+NITRO_PRESET=netlify npm run build:server
 ```
 
 Затем загрузите репозиторий на Netlify — он подхватит `.output/`.
@@ -69,7 +69,7 @@ NITRO_PRESET=netlify npm run build
 ### Vercel
 
 ```bash
-NITRO_PRESET=vercel npm run build
+NITRO_PRESET=vercel npm run build:server
 ```
 
 Полный список пресетов: <https://nitro.build/deploy>.
