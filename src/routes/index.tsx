@@ -339,9 +339,10 @@ function Index() {
                     </span>
                   </div>
                 )}
-                <div className="flex flex-col gap-1.5">
+                <div className="flex flex-col gap-2">
                   <h4 className="text-lg font-display font-medium tracking-tight">{p.title}</h4>
-                  <p className="text-xs text-muted-foreground uppercase tracking-widest">{p.tag}</p>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest">{p.tag}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               </article>
             ))}
