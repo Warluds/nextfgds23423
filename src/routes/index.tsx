@@ -135,23 +135,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-white border-b border-neutral-950/5">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-neutral-950/5">
-          {[
-            ["15 мин", "Реакция на инцидент"],
-            ["99.9%", "Uptime сервисов"],
-            ["50+", "Инженеров в команде"],
-            ["24/7", "Мониторинг систем"],
-          ].map(([v, l]) => (
-            <div key={l} className="p-8 flex flex-col gap-1">
-              <span className="text-2xl md:text-3xl font-semibold tracking-tight tabular-nums">{v}</span>
-              <span className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest">{l}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Services */}
       <section id="services" className="py-24 md:py-32 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-6">
