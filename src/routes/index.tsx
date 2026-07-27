@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import blueprintImg from "@/assets/blueprint.jpg";
+
 import caseInfraImg from "@/assets/case-infrastructure.jpg";
 import caseFintechImg from "@/assets/case-fintech.jpg";
 
