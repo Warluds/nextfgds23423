@@ -269,17 +269,19 @@ function Index() {
                 Закажите бесплатный аудит и получите детальный план развития инфраструктуры на 12 месяцев.
               </p>
               <div className="flex flex-wrap justify-center gap-3 pt-2">
-                <a
+              <a
                   href="mailto:hello@nexit.kz"
                   className="px-7 py-3.5 bg-brand text-white text-sm font-medium rounded-md hover:bg-brand-ink transition-colors"
                 >
                   Написать нам
                 </a>
                 <a
-                  href="tel:+77000000000"
+                  href="https://wa.me/77001767007"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-7 py-3.5 bg-transparent text-white ring-1 ring-neutral-700 text-sm font-medium rounded-md hover:bg-neutral-800 transition-colors"
                 >
-                  +7 700 000 00 00
+                  +7 700 176 7007
                 </a>
               </div>
             </div>
@@ -306,8 +308,13 @@ function Index() {
                 <a href="mailto:hello@nexit.kz" className="text-sm font-medium hover:text-brand transition-colors">
                   hello@nexit.kz
                 </a>
-                <a href="tel:+77000000000" className="text-sm font-medium hover:text-brand transition-colors">
-                  +7 700 000 00 00
+                <a
+                  href="https://wa.me/77001767007"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium hover:text-brand transition-colors"
+                >
+                  +7 700 176 7007
                 </a>
               </div>
               <div className="flex flex-col gap-3">
