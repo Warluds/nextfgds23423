@@ -21,26 +21,29 @@ npm run dev
 
 Важное уточнение: папка `public/` в исходниках — это **не готовый сайт**, там лежат только статические файлы вроде `robots.txt` и favicon. Готовый сайт появляется **после сборки**.
 
-### Готовый статический сайт
+### Готовый статический сайт (для обычного shared-хостинга)
 
 ```bash
 npm install --legacy-peer-deps
-npm run build
+npm run build:static
 ```
 
-После сборки готовый сайт будет в папке:
+После этого готовый сайт лежит в папке:
 
 ```
 dist/
 ```
 
-Именно содержимое папки `dist/` нужно загрузить в корень хостинга (`public_html`, `www`, `htdocs` — в зависимости от провайдера). Там будут `index.html`, `assets/` с картинками, CSS/JS, `robots.txt`, `sitemap.xml` и favicon.
+Внутри — `index.html` с уже отрендеренным содержимым (SEO-friendly), `assets/` с картинками, CSS и JS, `robots.txt`, `sitemap.xml` и favicon. Загрузите **содержимое** папки `dist/` в корень хостинга (`public_html`, `www`, `htdocs`).
 
-Проверка локально после сборки:
+Проверка локально:
 
 ```bash
 npx serve dist
 ```
+
+> `npm run build` (без `:static`) — сборка под Cloudflare Workers, используется внутри Lovable. Для обычного хостинга запускайте `npm run build:static`.
+
 
 ---
 
