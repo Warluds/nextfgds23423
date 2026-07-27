@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import caseInfraImg from "@/assets/case-infrastructure.jpg";
-import caseFintechImg from "@/assets/case-fintech.jpg";
+import caseAbisImg from "@/assets/case-abis.jpg";
+import caseEgloImg from "@/assets/case-eglo.jpg";
+import caseImpulseImg from "@/assets/case-impulse.jpg";
+import caseAbisGroupImg from "@/assets/case-abisgroup.jpg";
+import caseDeltaImg from "@/assets/case-delta.jpg";
+import caseMiracodeImg from "@/assets/case-miracode.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -282,19 +286,41 @@ function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                img: caseInfraImg,
+                img: caseAbisImg,
                 title: "abis",
                 tag: "ИТ-аутсорсинг · 1С · Серверы · Приложения · Сайт",
+                desc: "Полное ИТ-сопровождение: серверная инфраструктура, 1С, разработка приложений и корпоративного сайта.",
               },
               {
-                img: caseFintechImg,
+                img: caseEgloImg,
                 title: "eglo.kz",
                 tag: "ИТ-аутсорсинг · 1С · Серверы · Приложения · Сайт",
+                desc: "Комплексная поддержка ритейла освещения: серверы, 1С, мобильные приложения и веб-платформа.",
               },
-              { title: "impulse-media.kz", tag: "Веб-разработка · Корпоративный сайт" },
-              { title: "abis.group", tag: "Веб-разработка · Корпоративный сайт" },
-              { title: "deltaminingcons.kz", tag: "Веб-разработка · Корпоративный сайт" },
-              { title: "miracode.kz", tag: "Веб-разработка · Корпоративный сайт" },
+              {
+                img: caseImpulseImg,
+                title: "impulse-media.kz",
+                tag: "Веб-разработка · Корпоративный сайт",
+                desc: "Корпоративный сайт медиа-агентства с портфолио и системой заявок.",
+              },
+              {
+                img: caseAbisGroupImg,
+                title: "abis.group",
+                tag: "Веб-разработка · Корпоративный сайт",
+                desc: "Сайт-визитка холдинга: структура направлений, кейсы и точки контакта.",
+              },
+              {
+                img: caseDeltaImg,
+                title: "deltaminingcons.kz",
+                tag: "Веб-разработка · Корпоративный сайт",
+                desc: "Презентационный сайт для консалтинга в горнодобывающей отрасли.",
+              },
+              {
+                img: caseMiracodeImg,
+                title: "miracode.kz",
+                tag: "Веб-разработка · Корпоративный сайт",
+                desc: "Сайт студии разработки: услуги, портфолио и лид-форма.",
+              },
             ].map((p) => (
               <article key={p.title} className="group flex flex-col gap-5">
                 {p.img ? (
