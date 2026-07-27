@@ -10,13 +10,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Nexit.kz — ИТ-аутсорсинг, техподдержка 24/7, кибербезопасность, облака и разработка сайтов и мобильных приложений в Казахстане.",
+          "Nexit.kz — ИТ-аутсорсинг, техподдержка 24/7, облака и разработка сайтов и мобильных приложений в Казахстане.",
       },
       { property: "og:title", content: "Nexit — Инженерная точность ваших ИТ-систем" },
       {
         property: "og:description",
         content:
-          "ИТ-аутсорсинг, техподдержка 24/7, кибербезопасность, облака и разработка. Nexit.kz — технологический партнёр вашего бизнеса.",
+          "ИТ-аутсорсинг, техподдержка 24/7, облака и разработка. Nexit.kz — технологический партнёр вашего бизнеса.",
       },
       { property: "og:url", content: "/" },
       { name: "twitter:title", content: "Nexit — Инженерная точность ваших ИТ-систем" },
@@ -48,16 +48,11 @@ const services = [
   },
   {
     n: "04",
-    title: "Кибербезопасность",
-    desc: "Аудит уязвимостей, защита от DDoS, внедрение политик доступа и шифрования данных.",
-  },
-  {
-    n: "05",
     title: "Облачные решения",
     desc: "Миграция в облака, гибридные среды и управление ресурсами AWS, Azure и Yandex Cloud.",
   },
   {
-    n: "06",
+    n: "05",
     title: "Разработка сайтов",
     desc: "Корпоративные сайты, порталы и B2B-платформы на современном стеке с фокусом на скорости.",
   },
@@ -170,7 +165,7 @@ function Index() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div className="flex items-start gap-6">
                     <div className="size-10 bg-brand/10 rounded-md ring-1 ring-brand/20 flex items-center justify-center shrink-0">
-                      <span className="text-brand font-medium text-xs tabular-nums">07</span>
+                      <span className="text-brand font-medium text-xs tabular-nums">06</span>
                     </div>
                     <div className="flex flex-col gap-2">
                       <h3 className="text-lg font-medium tracking-tight">Разработка мобильных приложений</h3>
@@ -248,7 +243,7 @@ function Index() {
               {
                 img: caseInfraImg,
                 title: "Модернизация сети ритейл-компании",
-                tag: "ИТ-аутсорсинг · Безопасность",
+                tag: "ИТ-аутсорсинг · Инфраструктура",
               },
               {
                 img: caseFintechImg,
