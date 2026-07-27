@@ -17,38 +17,45 @@ npm run dev
 
 ---
 
-## Сборка и деплой на хостинг
+## Сборка и деплой на обычный хостинг
 
-По умолчанию проект собирается под Cloudflare Workers (пресет Nitro `cloudflare_module`). Для деплоя на обычный хостинг (Netlify, Vercel, Beget, обычный VPS, статический хостинг) укажите нужный пресет через переменную окружения `NITRO_PRESET`.
+Важное уточнение: папка `public/` в исходниках — это **не готовый сайт**, там лежат только статические файлы вроде `robots.txt` и favicon. Готовый сайт появляется **после сборки**.
 
-### 1. Статический сайт (для любого хостинга, включая обычный shared/VPS)
+### Готовый статический сайт
 
 ```bash
 npm install --legacy-peer-deps
-NITRO_PRESET=static npm run build
+npm run build
 ```
 
-Готовый статический сайт появится в папке:
+После сборки готовый сайт будет в папке:
 
 ```
-.output/public/
+dist/
 ```
 
-Содержимое этой папки нужно загрузить в корень вашего хостинга (`public_html`, `www`, `htdocs` — в зависимости от провайдера).
+Именно содержимое папки `dist/` нужно загрузить в корень хостинга (`public_html`, `www`, `htdocs` — в зависимости от провайдера). Там будут `index.html`, `assets/` с картинками, CSS/JS, `robots.txt`, `sitemap.xml` и favicon.
 
-> На Windows команда с переменной окружения выглядит так:
-> ```powershell
-> $env:NITRO_PRESET="static"; npm run build
-> ```
+Проверка локально после сборки:
 
-### 2. Node.js хостинг
+```bash
+npx serve dist
+```
+
+---
+
+## Альтернативные варианты сборки
+
+Если нужен не статический хостинг, можно указать другой Nitro preset вручную.
+
+### Node.js хостинг
 
 ```bash
 NITRO_PRESET=node-server npm run build
 node .output/server/index.mjs
 ```
 
-### 3. Netlify
+### Netlify
 
 ```bash
 NITRO_PRESET=netlify npm run build
@@ -56,7 +63,7 @@ NITRO_PRESET=netlify npm run build
 
 Затем загрузите репозиторий на Netlify — он подхватит `.output/`.
 
-### 4. Vercel
+### Vercel
 
 ```bash
 NITRO_PRESET=vercel npm run build
@@ -100,5 +107,6 @@ src/
   styles.css          — Tailwind v4 + design tokens
 public/
   robots.txt
+  sitemap.xml
   favicon.ico
 ```
