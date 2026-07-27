@@ -165,7 +165,7 @@ function Index() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div className="flex items-start gap-6">
                     <div className="size-10 bg-brand/10 rounded-md ring-1 ring-brand/20 flex items-center justify-center shrink-0">
-                      <span className="text-brand font-medium text-xs tabular-nums">07</span>
+                      <span className="text-brand font-medium text-xs tabular-nums">06</span>
                     </div>
                     <div className="flex flex-col gap-2">
                       <h3 className="text-lg font-medium tracking-tight">Разработка мобильных приложений</h3>
