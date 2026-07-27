@@ -7,19 +7,8 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  nitro: {
-    // For downloaded/self-hosted builds, plain `npm run build` now creates a
-    // ready-to-upload static site in `dist/` with bundled JS/CSS/images.
-    // Lovable's own preview/publish build still forces its managed output.
-    preset: process.env.NITRO_PRESET ?? "static",
-    output: {
-      dir: ".output",
-      publicDir: "dist",
-    },
-  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
   },
 });
