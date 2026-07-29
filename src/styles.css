@@ -5,11 +5,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --color-brand: #0284c7;
-  --color-brand-ink: #0369a1;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #0891b2;
+  --color-brand-ink: #031740;
+  --color-brand-cyan: #00f5ff;
+  --color-brand-navy: #031740;
 }
+
 
 /*
  * Design system definition.
@@ -68,8 +71,12 @@
 }
 
 :root {
+  --brand-navy: #031740;
+  --brand-cyan: #00f5ff;
+  --brand-slate: #895728;
   --radius: 0.75rem;
   --background: oklch(0.984 0.003 247.858);
+
   --foreground: oklch(0.208 0.042 265.755);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.208 0.042 265.755);
