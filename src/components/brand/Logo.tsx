@@ -38,21 +38,19 @@ export function Logo({
 
   return (
     <span className={cn("inline-flex flex-col leading-none", className)}>
-      <span className="inline-flex items-center font-display font-bold tracking-[-0.04em] text-2xl">
-        <span className={ink}>NE</span>
-        <span className="relative inline-flex items-center">
-          <span className={ink}>X</span>
-          <svg
-            viewBox="0 0 16 24"
-            aria-hidden
-            className="absolute -right-[0.28em] h-[1.05em] w-[0.6em] text-[var(--brand-cyan)]"
-            fill="currentColor"
-          >
-            <path d="M2 0h7l7 12-7 12H2l7-12L2 0z" />
-          </svg>
-        </span>
-        <span className="pl-[0.42em] text-[var(--brand-cyan)]">IT</span>
+      <span className="inline-flex items-center gap-[0.08em] font-display text-2xl font-bold tracking-[-0.03em]">
+        <span className={ink}>NEX</span>
+        <svg
+          viewBox="0 0 16 24"
+          aria-hidden
+          className="h-[0.85em] w-[0.55em] shrink-0 text-[var(--brand-cyan)]"
+          fill="currentColor"
+        >
+          <path d="M1 0h7l7 12-7 12H1l7-12L1 0z" />
+        </svg>
+        <span className="text-[var(--brand-cyan)]">IT</span>
       </span>
+
       {variant === "full" && (
         <span
           className={cn(
