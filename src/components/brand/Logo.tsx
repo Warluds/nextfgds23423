@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 
+import logoAsset from "@/assets/nexit-logo.png.asset.json";
+
 type Tone = "dark" | "light";
 
 /** Фирменный знак — двойной шеврон «X» (cyan). */
@@ -22,8 +24,8 @@ export function LogoMark({ className, tone = "dark" }: { className?: string; ton
 }
 
 /**
- * Вариант 1 — Wordmark: NEX (navy/white) + шеврон + IT (cyan).
- * Вариант 2 — Full: wordmark + подпись «ИТ-аутсорсинг и поддержка».
+ * Вариант 1 — Wordmark: логотип NEXIT.
+ * Вариант 2 — Full: логотип + подпись «ИТ-аутсорсинг и поддержка».
  */
 export function Logo({
   variant = "wordmark",
@@ -34,27 +36,19 @@ export function Logo({
   tone?: Tone;
   className?: string;
 }) {
-  const ink = tone === "dark" ? "text-[var(--brand-navy)]" : "text-white";
-
   return (
-    <span className={cn("inline-flex flex-col leading-none", className)}>
-      <span className="inline-flex items-center gap-[0.08em] font-display text-2xl font-bold tracking-[-0.03em]">
-        <span className={ink}>NEX</span>
-        <svg
-          viewBox="0 0 16 24"
-          aria-hidden
-          className="h-[0.85em] w-[0.55em] shrink-0 text-[var(--brand-cyan)]"
-          fill="currentColor"
-        >
-          <path d="M1 0h7l7 12-7 12H1l7-12L1 0z" />
-        </svg>
-        <span className="text-[var(--brand-cyan)]">IT</span>
-      </span>
-
+    <span className={cn("inline-flex flex-col items-start leading-none", className)}>
+      <img
+        src={logoAsset.url}
+        alt="Nexit"
+        className={cn("h-7 w-auto select-none", tone === "light" && "brightness-0 invert")}
+        loading="eager"
+        decoding="async"
+      />
       {variant === "full" && (
         <span
           className={cn(
-            "mt-1 text-[8px] font-medium uppercase tracking-[0.22em]",
+            "mt-2 text-[8px] font-medium uppercase tracking-[0.22em]",
             tone === "dark" ? "text-muted-foreground" : "text-white/60",
           )}
         >
